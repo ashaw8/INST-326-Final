@@ -14,3 +14,18 @@ example_list= ()
 class Character: 
         def __init__(self, name, color):
             self.name = "david"
+
+
+second_gb = ['-','-','-','-','+','O','O',    #14 0-14
+             'O','O','O','O','|','O','O',  
+             '+','-','+','O','|','O','O',   
+             '|','O','+','-','+','O','O',   
+             '|','O','O','O','O','O','O',   
+             '+','-','-','-','-','-','+',  
+             'O','O','O','O','O','O','O']  
+
+print(f"{' '.join(second_gb[0:7])}\n{' '.join(second_gb[7:14])}"
+      f"\n{' '.join(second_gb[14:21])}\n{' '.join(second_gb[21:28])}"
+      f"\n{' '.join(second_gb[28:35])}\n{' '.join(second_gb[35:42])}"
+      f"\n{' '.join(second_gb[42:49])}"
+      )
