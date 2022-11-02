@@ -12,3 +12,8 @@ will play. But this is an example intro docstring.
 example_list= ()
 #How do you make an octopus laugh...... give them ten-tickles
 #Who's going to have a great team project... Team Top 5
+
+class Character: 
+        def __init__(self, name, color):
+            self.name = "david"
+    
