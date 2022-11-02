@@ -1,6 +1,6 @@
 """Jumanji Game Board
 11/1/2022
-Authors: Aidan Shawyer, Jeffrey Gomes, Josiah Arnold
+Authors: Aidan Shawyer, Jeffrey Gomes, Josiah Arnold, Hannah Johnston
 
 This is a starter doctsring saying who is exactly in our
 group for this final project. In which we will be making
