@@ -22,7 +22,9 @@ class Character:
         self.name = "david"
 
 class GameRules:
-    """Define the game rules for each time of game board tile
+    """Define the game rules for each type of game board tile
+    Each method will need to use the GameMovement Class, may switch around to have
+    GameRules inherent from GaveMovement Class
     """
     def __init__(self) -> None:
         pass
@@ -50,6 +52,8 @@ class GameRules:
 
 class GameMovement:
     def __init__(self) -> None:
+        """Initialize our gameboard that will be played on 
+        """
         pass
     def roll_dye(self):
         """Ability to roll different types of dye, numeric or character based
@@ -70,6 +74,7 @@ def check_winner():
     """Check if player has reached the end tile's index
     """
     return
+
 
 def main():
     """Run the main code of the game, open and read doc with the game cards
