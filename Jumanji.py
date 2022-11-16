@@ -11,7 +11,7 @@ will play. But this is an example intro docstring.
 """
 
 
-class Character:
+class GameSetUp:
     """Create names and attributes for the 4 players in our Jumanji game
     Attributes:
         name (str): The name of one of the four players to play
@@ -19,7 +19,16 @@ class Character:
     
     """ 
     def __init__(self, name, character):
-        self.name = "david"
+        self.name = name
+        self.character = character
+        self.game_board = ['S','-','-','-','-','-','>',    #14 014
+                            'O','O','O','O','O','O','>',  
+                            '+','-','-','-','-','-','>',    
+                            '+','O','O','O','O','O','O',   
+                            '+','-','-','-','-','-','>',    
+                            'O','O','O','O','O','O','>',  
+                            '+','-','-','-','-','-','>', 
+                            '+','-','-','-','-','-','J']  
 
 class GameRules:
     """Define the game rules for each type of game board tile
@@ -64,15 +73,21 @@ class GameMovement:
         """
         pass
     
+class GameStats:
+    def number_of():
+        """Summarize the number of rolls
+        """
+        pass
+    def check_winner():
+        pass
+    
+    
 def doomsday_grid():
     """Keep track of doomsday grid count, if reaches 8/8 cards, game ends and all
     players lose
     """
     return
 
-def check_winner():
-    """Check if player has reached the end tile's index
-    """
     return
 
 
@@ -89,34 +104,12 @@ def main():
 
 
 
-
-
-
-quad_one = ['S','-','-','-','-','-','>',    #14 014
-             'O','O','O','O','O','O','>',  
-             '+','-','-','-','-','-','>',    
-             '+','O','O','O','O','O','O',   
-             '+','-','-','-','-','-','>',    
-             'O','O','O','O','O','O','>',  
-             '+','-','-','-','-','-','>', 
-             '+','-','-','-','-','-','J']  
-
-#quad_two = [#'<','-','-','-','-','-','S',    #14 014
-            # '<','O','O','O','O','O','O',  
-            # '<','-','-','-','-','-','+',    
-            # '','O','O','O','O','O','+',   
-            # '<','-','-','-','-','-','+',    
-            # '<','O','O','O','O','O','O',  
-            # '<','-','-','-','-','-','+', 
-            # 'J','-','-','-','-','-','+'] 
-#This looks very ugly, gonna need to figure a new game board out - Aidan 
-
-print(f"{' '.join(quad_one[0:7])}"
-      f"\n{' '.join(quad_one[7:14])}"
-      f"\n{' '.join(quad_one[14:21])}"
-      f"\n{' '.join(quad_one[21:28])}"
-      f"\n{' '.join(quad_one[28:35])}"
-      f"\n{' '.join(quad_one[35:42])}"
-      f"\n{' '.join(quad_one[42:49])}"
-      f"\n{' '.join(quad_one[49:56])}"
-      )
+#print(f"{' '.join(quad_one[0:7])}"
+      #f"\n{' '.join(quad_one[7:14])}"
+      #f"\n{' '.join(quad_one[14:21])}"
+      #f"\n{' '.join(quad_one[21:28])}"
+      #f"\n{' '.join(quad_one[28:35])}"
+      #f"\n{' '.join(quad_one[35:42])}"
+      #f"\n{' '.join(quad_one[42:49])}"
+      #f"\n{' '.join(quad_one[49:56])}"
+ #     )
