@@ -61,9 +61,9 @@ class GameRules(GameSetUp):
         """All players are trapped in the jungle, everyone must roll to save
         eachother
         
-        Side Effects:
+        Side Effects: No one can move until all players have rolled
         
-        Returns: 
+        Returns: None
         """
         pass
     def rhino_space(self):
