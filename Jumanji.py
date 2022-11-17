@@ -16,9 +16,11 @@ class GameSetUp:
     Attributes:
         name (str): The name of one of the four players to play
         character (str): the game piece the user wants to play as
-    
+        game_board (list): list of characters to be played as our game board
+        cards (list): List of game cards
     """ 
-    def __init__(self, name, character):
+    def __init__(self, name, character, listofcards):
+        self.cards = listofcards
         self.name = name
         self.character = character
         self.game_board = ['S','-','-','-','-','-','>',    #14 014
@@ -30,16 +32,13 @@ class GameSetUp:
                             '+','-','-','-','-','-','>', 
                             '+','-','-','-','-','-','J']  
 
-class GameRules:
+class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
-    Each method will need to use the GameMovement Class, may switch around to have
-    GameRules inherent from GaveMovement Class
     """
-    def __init__(self) -> None:
-        pass
     def blank_space(self):
         """Jungle Danger threaten you. To be saved, players must roll the hourglass
         or symbol you drew on your card
+        Returns: String indicating whos turn is next
         """
         pass
     def wait_for_space(self):
@@ -58,42 +57,61 @@ class GameRules:
         rhino, or the roll an even number
         """
         pass
+        
+    def doomsday_grid():
+        """Keep track of doomsday grid count, if reaches 8/8 cards, game ends and all
+        players lose
+        """
+        pass
 
-class GameMovement:
+
+class GameMovement(GameSetUp):
     def __init__(self) -> None:
         """Initialize our gameboard that will be played on 
         """
         pass
     def roll_dye(self):
         """Ability to roll different types of dye, numeric or character based
+
+            Returns: The number from a dye 1-8 and a character from a second dye
         """
         pass
     def move_player(self):
         """Move player across game board 
+            
+            Returns: The position the player has moved to on the game board
+        """
+        pass
+    def players_turn(self):
+        """Keeps track of whos turn it is
+        
+            Side effects: Indicates whos turn it is to other methods
         """
         pass
     
 class GameStats:
     def number_of():
         """Summarize the number of rolls
+        
+        Returns: Stats on spaces moved, number of rolls, cards used, turns taken
         """
         pass
     def check_winner():
+        """Check if a player has reached Jumanji tile
+        
+            Side effects: Ends game and indicates winner
+            
+            Returns: String indicating the winner of the game, if any
+        """
         pass
-    
-    
-def doomsday_grid():
-    """Keep track of doomsday grid count, if reaches 8/8 cards, game ends and all
-    players lose
-    """
-    return
-
-    return
 
 
-def main():
+def main(filepath):
     """Run the main code of the game, open and read doc with the game cards
     Each card will be different
+    
+    Attribute:
+        filepath(str): string to a file path of Jumanji game cards
     """
     return
 
