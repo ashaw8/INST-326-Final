@@ -1,7 +1,10 @@
+import sys
+import argparse
+
+
 """Jumanji Game Board
 11/1/2022
 Authors: Aidan Shawyer, Jeffrey Gomes, Josiah Arnold, Hannah Johnston, Peter Mensah
-
 This is a starter doctsring saying who is exactly in our
 group for this final project. In which we will be making
 our own version of the Jumanji board game. It will consist
@@ -98,15 +101,23 @@ class GameRules(GameSetUp):
 
 
 class GameMovement(GameSetUp):
+    """This class will determine how a player will move and will track which
+    players turn it is.
+    
+        
+        """
     def __init__(self) -> None:
         """Initialize our gameboard that will be played on 
         """
         pass
 
     def move_player(self):
-        """Move player across game board 
+        """Move player across game board.
             
             Returns: The position the player has moved to on the game board
+            
+            Side effect: Interacts with the roll_dye method to be able to 
+                determine how many spaces the player will move.
         """
         pass
     def players_turn(self):
@@ -117,8 +128,15 @@ class GameMovement(GameSetUp):
         pass
     
 class GameStats:
+    """Here it will count the overall statistics of the game played for each of
+    players in the game. It will deliver the total number of rolls, cards, and
+    turns that each of the players had taken.
+    
+        Attributes:
+            """
     def number_of():
-        """Reutrn the number of rolls for each player
+        """Counts the number of rolls for each player, the cards that each of 
+        them used, and the number of turns taken for each of the players.
         
         Returns: Stats on spaces moved, number of rolls, cards used, turns taken
         """
@@ -147,7 +165,9 @@ def main(filepath):
 
 
 
-
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.file)
 
 #print(f"{' '.join(quad_one[0:7])}"
       #f"\n{' '.join(quad_one[7:14])}"
