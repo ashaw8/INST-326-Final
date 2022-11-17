@@ -91,7 +91,7 @@ class GameMovement(GameSetUp):
     
 class GameStats:
     def number_of():
-        """Summarize the number of rolls
+        """Reutrn the number of rolls for each player
         
         Returns: Stats on spaces moved, number of rolls, cards used, turns taken
         """
