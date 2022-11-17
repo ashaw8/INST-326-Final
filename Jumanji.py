@@ -31,6 +31,13 @@ class GameSetUp:
                             'O','O','O','O','O','O','>',  
                             '+','-','-','-','-','-','>', 
                             '+','-','-','-','-','-','J']  
+        
+    def roll_dye(self):
+        """Ability to roll different types of dye, numeric or character based
+
+            Returns: The number from a dye 1-8 and a character from a second dye
+        """
+        pass
 
 class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
@@ -95,12 +102,7 @@ class GameMovement(GameSetUp):
         """Initialize our gameboard that will be played on 
         """
         pass
-    def roll_dye(self):
-        """Ability to roll different types of dye, numeric or character based
 
-            Returns: The number from a dye 1-8 and a character from a second dye
-        """
-        pass
     def move_player(self):
         """Move player across game board 
             
