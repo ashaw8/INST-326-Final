@@ -38,29 +38,54 @@ class GameRules(GameSetUp):
     def blank_space(self):
         """Jungle Danger threaten you. To be saved, players must roll the hourglass
         or symbol you drew on your card
-        Returns: String indicating whos turn is next
+        
+        Side Effects: roll dice method, interacts with doomsday grid method
+        
+        Returns: String indicating whos turn is next or add's a card to the doomsday grid
         """
         pass
     def wait_for_space(self):
         """Players must roll a 5 or 8 to save you. Each unsuccesful roll of a 
         5 or 8 requires the player who drew the card to move back a space
+        
+        Side Effects: Players will move back if Players were unsuccesful to free them if 5 or 8 was not rolled. 
+        Interacts with players turn method/class for each trial to free character
+        
+        Players can keep moving back if they are unsuccesful
+        
+        Returns: New player position and stats
+        
         """
         pass
     def jungle_space(self):
         """All players are trapped in the jungle, everyone must roll to save
         eachother
+        
+        Side Effects:
+        
+        Returns: 
         """
         pass
     def rhino_space(self):
         """If player lands on a rhino space, player may block any other player
         with the Rhino piece, that player can not move until someone moves the
         rhino, or the roll an even number
+        
+        Side effects: Player with Rhino in front of them has limited movement
+        
+        Returns: New player position with Rhino infront of them
+        
+        
         """
         pass
         
-    def doomsday_grid():
+    def doomsday_grid(self):
         """Keep track of doomsday grid count, if reaches 8/8 cards, game ends and all
         players lose
+        
+        Side Effects: If reaches 8/8 game indicates that player lost and interacts with game stats class
+        
+        Returns: Game is over if True if False game continues
         """
         pass
 
