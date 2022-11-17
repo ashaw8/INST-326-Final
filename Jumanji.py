@@ -19,7 +19,7 @@ class GameSetUp:
         game_board (list): list of characters to be played as our game board
         cards (list): List of game cards
     """ 
-    def __init__(self, name, character, listofcards, turnnumber):
+    def __init__(self, name, character, listofcards, turnnumber,type ):
         self.cards = listofcards
         self.name = name
         self.character = character
