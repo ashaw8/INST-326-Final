@@ -38,7 +38,7 @@ class GameSetUp:
     def roll_dye(self):
         """Ability to roll different types of dye, numeric or character based
 
-            Returns: The number from a dye 1-8 and a character from a second dye
+            Returns (int): The number from a dye 1-8 and a character from a second dye
         """
         pass
 
@@ -95,7 +95,7 @@ class GameRules(GameSetUp):
         
         Side Effects: If reaches 8/8 game indicates that player lost and interacts with game stats class
         
-        Returns: Game is over if True if False game continues
+        Returns (Boolean): Game is over if True if False game continues
         """
         pass
 
@@ -146,7 +146,7 @@ class GameStats:
         
             Side effects: Ends game and indicates winner
             
-            Returns: String indicating the winner of the game, if any
+            Returns (str): String indicating the winner of the game, if any
         """
         pass
 
