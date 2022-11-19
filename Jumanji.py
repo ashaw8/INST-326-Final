@@ -46,12 +46,13 @@ class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
     """
     def blank_space(self):
-        """Jungle Danger threaten you. To be saved, players must roll the hourglass
+        """Jungle Danger threaten you, which basically means the character whose roll it is
+        is in trouble. To be saved, other players get a turn and must roll the hourglass
         or symbol you drew on your card
         
         Side Effects: roll dice method, interacts with doomsday grid method
         
-        Returns: String indicating whos turn is next or add's a card to the doomsday grid
+        Returns(str): String indicating whos turn is next or add's a card to the doomsday grid
         """
         pass
     def wait_for_space(self):
@@ -63,7 +64,7 @@ class GameRules(GameSetUp):
         
         Players can keep moving back if they are unsuccesful
         
-        Returns: New player position and stats
+        Returns(str): Updated player position and stats respective to the players
         
         """
         pass
@@ -79,11 +80,11 @@ class GameRules(GameSetUp):
     def rhino_space(self):
         """If player lands on a rhino space, player may block any other player
         with the Rhino piece, that player can not move until someone moves the
-        rhino, or the roll an even number
+        rhino, or they roll an even number
         
         Side effects: Player with Rhino in front of them has limited movement
         
-        Returns: New player position with Rhino infront of them
+        Returns(str): New player position with Rhino infront of them
         
         
         """
@@ -91,30 +92,30 @@ class GameRules(GameSetUp):
         
     def doomsday_grid(self):
         """Keep track of doomsday grid count, if reaches 8/8 cards, game ends and all
-        players lose
+        players end up losing the game
         
         Side Effects: If reaches 8/8 game indicates that player lost and interacts with game stats class
         
-        Returns (Boolean): Game is over if True if False game continues
+        Returns(Boolean): Game is over if True if False game continues
         """
         pass
 
 
 class GameMovement(GameSetUp):
     """This class will determine how a player will move and will track which
-    players turn it is.
+    players turn it is, through inheriting the GameSetUp class
     
         
         """
     def __init__(self) -> None:
-        """Initialize our gameboard that will be played on 
+        """Initialize our gameboard to be played and moved on.
         """
         pass
 
     def move_player(self):
         """Move player across game board.
             
-            Returns: The position the player has moved to on the game board
+            Returns(str): The board game position the player has moved to on the game board
             
             Side effect: Interacts with the roll_dye method to be able to 
                 determine how many spaces the player will move.
@@ -123,7 +124,8 @@ class GameMovement(GameSetUp):
     def players_turn(self):
         """Keeps track of whos turn it is
         
-            Side effects: Indicates whos turn it is to other methods
+            Side effects: Indicates whos turn it is to the other methods so that the 
+            other methods can adopt and become active for the current player.
         """
         pass
     
@@ -138,15 +140,16 @@ class GameStats:
         """Counts the number of rolls for each player, the cards that each of 
         them used, and the number of turns taken for each of the players.
         
-        Returns: Stats on spaces moved, number of rolls, cards used, turns taken
+        Returns(ints and str): Stats on spaces moved, number of rolls, cards used, turns taken
         """
         pass
     def check_winner():
-        """Check if a player has reached Jumanji tile
+        """Check if a player has reached Jumanji tile by rolling the exact number needed on the dice
         
             Side effects: Ends game and indicates winner
             
-            Returns (str): String indicating the winner of the game, if any
+            Returns(str): String indicating the winner of the game or it will 
+            have to return the fact that no one won
         """
         pass
 
