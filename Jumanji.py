@@ -115,7 +115,7 @@ class GameMovement(GameSetUp):
     def move_player(self):
         """Move player across game board.
             
-            Returns(str): The board game position the player has moved to on the game board
+            Returns(str): The board game position the player has moved to on the game boards
             
             Side effect: Interacts with the roll_dye method to be able to 
                 determine how many spaces the player will move.
