@@ -1,6 +1,6 @@
 import sys
 import argparse
-
+import random
 
 """Jumanji Game Board
 11/1/2022
@@ -35,11 +35,22 @@ class GameSetUp:
                             '+','-','-','-','-','-','>', 
                             '+','-','-','-','-','-','J']  
         
-    def roll_dye(self):
+    def roll_dice(self,required_dice):
         """Ability to roll different types of dye, numeric or character based
 
             Returns (int): The number from a dye 1-8 and a character from a second dye
         """
+        
+        character_dice = ['axe', 'die', 'opendoor', 'racquet', 'raft','rope', 'score', 'hourglass']
+        if required_dice == "number":
+            return random.randint(1,8)
+        else:
+            return random.choice(character_dice)
+        
+        
+        
+        
+        
         pass
 
 class GameRules(GameSetUp):
