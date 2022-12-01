@@ -33,17 +33,6 @@ class GameSetUp:
                             '+','-','-','-','-','-','>', 
                             '+','-','-','-','-','-','J']  
         
-    def roll_dice(self, required_dice):
-        """Ability to roll different types of dye, numeric or character based
-
-            Returns (int): The number from a dye 1-8 and a character from a second dye
-        """
-        
-        character_dice = ['axe', 'die', 'opendoor', 'racquet', 'raft','rope', 'score', 'hourglass']
-        if required_dice == "number":
-            return random.randint(1,8)
-        else:
-            return random.choice(character_dice)
 
 class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
@@ -156,6 +145,17 @@ class GameStats:
         """
         pass
 
+def roll_dice(required_dice):
+        """Ability to roll different types of dye, numeric or character based
+
+            Returns (int): The number from a dye 1-8 and a character from a second dye
+        """
+        
+        character_dice = ['axe', 'die', 'opendoor', 'racquet', 'raft','rope', 'score', 'hourglass']
+        if required_dice == "number":
+            return random.randint(1,8)
+        else:
+            return random.choice(character_dice)
 
 def main(filepath):
     """Run the main code of the game, open and read doc with the game cards
@@ -164,6 +164,8 @@ def main(filepath):
     Attribute:
         filepath(str): string to a file path of Jumanji game cards
     """
+    
+    #main game method, will be a while loop to run game 
     return
 
 
