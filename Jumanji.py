@@ -22,10 +22,8 @@ class GameSetUp:
         game_board (list): list of characters to be played as our game board
         cards (list): List of game cards
     """ 
-    def __init__(self, name, character, listofcards, turnnumber,type ):
+    def __init__(self, listofcards ):
         self.cards = listofcards
-        self.name = name
-        self.character = character
         self.game_board = ['S','-','-','-','-','-','>',    #14 014
                             'O','O','O','O','O','O','>',  
                             '+','-','-','-','-','-','>',    
@@ -35,7 +33,7 @@ class GameSetUp:
                             '+','-','-','-','-','-','>', 
                             '+','-','-','-','-','-','J']  
         
-    def roll_dice(self,required_dice):
+    def roll_dice(self, required_dice):
         """Ability to roll different types of dye, numeric or character based
 
             Returns (int): The number from a dye 1-8 and a character from a second dye
@@ -46,12 +44,6 @@ class GameSetUp:
             return random.randint(1,8)
         else:
             return random.choice(character_dice)
-        
-        
-        
-        
-        
-        pass
 
 class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
@@ -182,13 +174,3 @@ def main(filepath):
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
     main(args.file)
-
-#print(f"{' '.join(quad_one[0:7])}"
-      #f"\n{' '.join(quad_one[7:14])}"
-      #f"\n{' '.join(quad_one[14:21])}"
-      #f"\n{' '.join(quad_one[21:28])}"
-      #f"\n{' '.join(quad_one[28:35])}"
-      #f"\n{' '.join(quad_one[35:42])}"
-      #f"\n{' '.join(quad_one[42:49])}"
-      #f"\n{' '.join(quad_one[49:56])}"
- #     )
