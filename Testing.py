@@ -47,18 +47,11 @@ gameboard = ["|","S","|"," ","|","S","|"," ","|","S","|"," ","|","S","|", #0-15
 
 
 
-p1 = 1
-p2 = 5
-p3 = 9
-p4 = 13
-flag1 =0
-p1_list = []
-## player 1 index 
-while flag1 != 35:
-    p1 += 15
-    p2 += 15
-    p3 += 15
-    p4 += 15
-    flag1 += 1
-    p1_list.append(p4)
-print(p1_list)
+flag = 0
+start = 0
+end = 15
+while flag != 35:
+    print("".join(gameboard[start:end]))
+    start += 15
+    end += 15
+    flag += 1
