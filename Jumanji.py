@@ -22,8 +22,8 @@ class GameSetUp:
         game_board (list): list of characters to be played as our game board
         cards (list): List of game cards
     """ 
-    def __init__(self, listofcards):
-        self.cards = listofcards
+    def __init__(self):
+        self.cards = "listofcards"
         #Index for each players total sequence of movements
         self.player_spaces = {"Player1":[1,16, 31, 46, 61, 76, 91, 106, 121, 136
         ,151, 166, 181, 196, 211, 226, 241, 256, 271, 286, 301, 316, 331, 346,
@@ -37,6 +37,11 @@ class GameSetUp:
                               "Player4":[13, 28, 43, 58, 73, 88, 103, 118, 133, 
         148, 163, 178, 193, 208, 223, 238, 253, 268, 283, 298, 313, 328, 343, 
         358, 373,388, 403, 418, 433, 448, 463, 478, 493, 508, 523, 538]}
+        
+        self.playertotal1 = 0
+        self.playertotal2 = 0
+        self.playertotal3 = 0
+        self.playertotal4 = 0
         
         self.game_board = ["|","S","|"," ","|","S","|"," ","|","S","|"," ","|","S","|", #0-15
              "|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|",
@@ -74,7 +79,45 @@ class GameSetUp:
              "|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|",
              "|","J","|"," ","|","J","|"," ","|","J","|"," ","|","J","|",
              ]  
+        print(self.cards)
         
+    def move_player(self, playerturn, number):
+        """Move player across game board.
+            
+            Returns(str): The board game position the player has moved to on the game boards
+            
+            Side effect: Interacts with the roll_dye method to be able to 
+                determine how many spaces the player will move.
+        """
+        if playerturn == 1:
+            self.playertotal1 += number
+            player1 = self.player_spaces["Player1"]
+            player1move = player1[self.playertotal1]
+            self.game_board[player1move] = "1"
+        if playerturn == 2:
+            self.playertotal2 += number
+            player2 = self.player_spaces["Player2"]
+            player2move = player2[self.playertotal2]
+            self.game_board[player2move] = "2"
+        if playerturn == 3:
+            self.playertotal3 += number
+            player3 = self.player_spaces["Player3"]
+            player3move = player3[self.playertotal3]
+            self.game_board[player3move] = "3"
+        if playerturn == 4:
+            self.playertotal4 += number
+            player4 = self.player_spaces["Player4"]
+            player4move = player4[self.playertotal4]
+            self.game_board[player4move] = "4"
+        
+
+    def players_turn(self):
+        """Keeps track of whos turn it is
+        
+            Side effects: Indicates whos turn it is to the other methods so that the 
+            other methods can adopt and become active for the current player.
+        """
+        pass
 
 class GameRules(GameSetUp):
     """Define the game rules for each type of game board tile
@@ -134,36 +177,8 @@ class GameRules(GameSetUp):
         """
         pass
 
-
-class GameMovement(GameSetUp):
-    """This class will determine how a player will move and will track which
-    players turn it is, through inheriting the GameSetUp class
     
-        
-        """
-    def __init__(self) -> None:
-        """Initialize our gameboard to be played and moved on.
-        """
-        pass
-
-    def move_player(self):
-        """Move player across game board.
-            
-            Returns(str): The board game position the player has moved to on the game boards
-            
-            Side effect: Interacts with the roll_dye method to be able to 
-                determine how many spaces the player will move.
-        """
-        pass
-    def players_turn(self):
-        """Keeps track of whos turn it is
-        
-            Side effects: Indicates whos turn it is to the other methods so that the 
-            other methods can adopt and become active for the current player.
-        """
-        pass
-    
-class GameStats:
+class GameStats(GameSetUp):
     """Here it will count the overall statistics of the game played for each of
     players in the game. It will deliver the total number of rolls, cards, and
     turns that each of the players had taken.
@@ -199,7 +214,7 @@ def roll_dice(required_dice):
         else:
             return random.choice(character_dice)
 
-def main(filepath):
+def main():
     """Run the main code of the game, open and read doc with the game cards
     Each card will be different
     
@@ -208,13 +223,15 @@ def main(filepath):
     """
     
     #main game method, will be a while loop to run game 
-    return
+    game = GameSetUp()
+    game.move_player(1,3)
+    #Temp flag until check_winner method is set-up
 
 
 
+main()
 
 
-
-if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
-    main(args.file)
+#if __name__ == "__main__":
+    #args = parse_args(sys.argv[1:])
+    #main(args.file)
