@@ -23,5 +23,6 @@ with open("MASH.txt","r", encoding="utf-8") as f:
         line = line.strip()
         random_list.append(line)
 categories(random_list)
+
     
     
