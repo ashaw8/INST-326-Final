@@ -117,6 +117,8 @@ class GameSetUp:
             Side effects: Indicates whos turn it is to the other methods so that the 
             other methods can adopt and become active for the current player.
         """
+        
+        
         pass
 
 class GameRules(GameSetUp):
@@ -200,7 +202,9 @@ class GameStats(GameSetUp):
             Returns(str): String indicating the winner of the game or it will 
             have to return the fact that no one won
         """
+        
         pass
+    
 
 def roll_dice(required_dice):
         """Ability to roll different types of dye, numeric or character based

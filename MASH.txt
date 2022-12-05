@@ -1,3 +1,6 @@
+#Regex
+#(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)
+
 Brady, Tom 7 Toyota dog Florida
 Watson, Emma 3 Altima cat Hollywood
 Smith, Will 6 Honda giraffe Boston
@@ -10,6 +13,6 @@ Lopez, Jennifer 8 Jeep koala Canada
 Cena, John 10 Skateboard ant Tennessee
 Young, Bryce 11 Heelies catepillar Idaho
 Fox, Megan 31 Metro worm Maine
-Lipa, Dua 0 RazorScooter goldfish Spain
+Lipa, Dua 0 Scooter goldfish Spain
 James, Lebron 33 Bus rock Texas
 Curry, Ayesha 22 Walking toad Brazil 
