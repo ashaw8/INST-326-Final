@@ -3,6 +3,7 @@ import random
 import sys
 
 
+
 def categories(textline):
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)
     \s(?P<transportation>[A-Z]{1}[a-z]+)
@@ -11,6 +12,10 @@ def categories(textline):
         print(i)
         search_regex = re.search(expression, i)
     
+    
+def separate(textline):
+        name = list(filter(lambda v: re.match('[A-Z][a-z]+,\s[A-Z][a-z]+',v)))
+        kids = list(filter())
   
 random_list = []  
 with open("MASH.txt","r", encoding="utf-8") as f:
