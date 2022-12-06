@@ -2,7 +2,7 @@ import re
 import random
 import sys
 import pandas as pd
-import matlibplot.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 
@@ -55,6 +55,7 @@ def main():
           your pet is a {regex[3]}\n
           and you live in {regex[4]}''')
     salary = salaries()
+    createplot(salary)
        
 def salaries():
     
@@ -65,9 +66,9 @@ def salaries():
     job,salary = career[0],career[1]
     salary_filter= df['Salary'] >= salary
     df[salary_filter]
-    print(df[salary_filter])
-    print(f'You are a {job} and you make {salary} you make less then those above')
-    return money_made
+    #print(df[salary_filter])
+    #print(f'You are a {job} and you make {salary} you make less then those above')
+    return job
 
 def createplot(job, desired_salary = 100000):
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
@@ -79,7 +80,6 @@ def createplot(job, desired_salary = 100000):
     plt.plot(job, desired_salary)
     plt.bar(jobs_list, salary_list, color = "maroon", width = 1)
     plt.show()
-createplot("Doctor")
 
 
 main()
