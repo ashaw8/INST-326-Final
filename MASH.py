@@ -1,6 +1,7 @@
 import re
 import random
 import sys
+import pandas as pd
 
 
 
@@ -53,6 +54,14 @@ def main():
           your pet is a {regex[3]}\n
           and you live in {regex[4]}''')
     
+def salaries():
+    
+    
+    money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Uber Driver",10_000],["Salesperson",50_000], ["Veterinarian", 120_000],["Dropshipper",180_000], ["Instagram Model", 7_000],["UFC Fighter", 1_000],["Dentist",190_000], ["DMV Rapper", 500], ["Marvel Actor", 200_000], ["Mickey Mouse Character", 250_000], ["Lifeguard", 30_000]]
+    df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
+    df
+    
+    salary_filter= df['Salary'] >= 60_000
     
     
 main()
