@@ -67,6 +67,7 @@ def salaries():
     df[salary_filter]
     print(df[salary_filter])
     print(f'You are a {job} and you make {salary} you make less then those above')
+    return money_made
 
 
 main()
