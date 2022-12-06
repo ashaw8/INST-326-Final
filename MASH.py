@@ -35,4 +35,4 @@ def pass_regex():
         
     return [random.choice(list1),random.choice(list2),random.choice(list3),random.choice(list4),random.choice(list5),]
 
-print(pass_regex())
+
