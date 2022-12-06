@@ -8,7 +8,7 @@ def categories(textline):
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
     
     search_regex = re.search(expression,textline)
-    return search_regex.group(2)
+    return search_regex.group(3)
     
     
 def separate(textline):
