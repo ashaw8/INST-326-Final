@@ -48,13 +48,12 @@ def pass_regex():
 
 def main():
     regex = pass_regex()
-    salary = salaries()
     print(f'''Your partner is {regex[0]}\n
           and you will have {regex[1]} kids\n
           and you get around by {regex[2]}\n
           your pet is a {regex[3]}\n
-          and you live in {regex[4]}\n
-          salary and job: {salary[0]}\t{salary[1]}''')
+          and you live in {regex[4]}''')
+    salary = salaries()
        
 def salaries():
     
@@ -66,7 +65,7 @@ def salaries():
     salary_filter= df['Salary'] >= salary
     df[salary_filter]
     print(df[salary_filter])
-    return [job,salary]
+    print(f'You are a {job} and you make {salary} you make less then those above')
 
 
 main()
