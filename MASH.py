@@ -59,7 +59,7 @@ def main():
 def salaries():
     
     
-    money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Uber Driver",10_000],["Salesperson",50_000], ["Veterinarian", 120_000],["Dropshipper",180_000], ["Instagram Model", 7_000],["UFC Fighter", 1_000],["Dentist",190_000], ["DMV Rapper", 500], ["Marvel Actor", 200_000], ["Mickey Mouse Character", 250_000], ["Lifeguard", 30_000]]
+    money_made = [["Doctor", 150000], ["Chef", 90000], ["Librarian", 30000], ["Swimmer", 60000],["Uber Driver",10000],["Salesperson",50000], ["Veterinarian", 120000],["Dropshipper",180000], ["Instagram Model", 7000],["UFC Fighter", 1000],["Dentist",190000], ["DMV Rapper", 500], ["Marvel Actor", 200000], ["Mickey Mouse Character", 250000], ["Lifeguard", 30000]]
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
     career = random.choice(money_made)
     job,salary = career[0],career[1]
@@ -68,6 +68,17 @@ def salaries():
     print(df[salary_filter])
     print(f'You are a {job} and you make {salary} you make less then those above')
     return money_made
+
+def createplot(job, desired_salary = 100000):
+    jobs_list = []
+    for list in money_made:
+        jobs_list.append(list[0])
+        return jobs_list
+    salary_list = []
+    for list in money_made:
+        salary_list.append(list[1])
+        return salary_list
+    plt.plot(jobs_list, salary_list)
 
 
 main()
