@@ -59,7 +59,7 @@ def main():
 def salaries():
     
     
-    money_made = [["Doctor", 150000], ["Chef", 90000], ["Librarian", 30000], ["Swimmer", 60000],["Uber Driver",10000],["Salesperson",50000], ["Veterinarian", 120000],["Dropshipper",180000], ["Instagram Model", 7000],["UFC Fighter", 1000],["Dentist",190000], ["DMV Rapper", 500], ["Marvel Actor", 200000], ["Mickey Mouse Character", 250000], ["Lifeguard", 30000]]
+    money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
     career = random.choice(money_made)
     job,salary = career[0],career[1]
@@ -70,15 +70,16 @@ def salaries():
     return money_made
 
 def createplot(job, desired_salary = 100000):
+    money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     jobs_list = []
-    for list in money_made:
-        jobs_list.append(list[0])
-        return jobs_list
     salary_list = []
     for list in money_made:
+        jobs_list.append(list[0])
         salary_list.append(list[1])
-        return salary_list
-    plt.plot(jobs_list, salary_list)
+    plt.plot(job, desired_salary)
+    plt.bar(jobs_list, salary_list, color = "maroon", width = 1)
+    plt.show()
+createplot("Doctor")
 
 
 main()
