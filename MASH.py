@@ -7,7 +7,21 @@ import sys
 def categories(textline, option):
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
     search_regex = re.search(expression,textline)
-    return search_regex.group(2)
+    if option == 1:
+        name = search_regex.group(1)
+        return name
+    if option == 2:
+        kids = search_regex.group(2)
+        return kids
+    if option == 3:
+        car = search_regex.group(3)
+        return car
+    if option == 4:
+        pet = search_regex.group(4)
+        return pet
+    if option == 5:
+        location = search_regex.group(5)
+        return location
     
     
 
@@ -33,6 +47,7 @@ def pass_regex():
         list4.append(categories(line, 4))
         list5.append(categories(line, 5))
         
-    return [random.choice(list1),random.choice(list2),random.choice(list3),random.choice(list4),random.choice(list5),]
+    return [random.choice(list1),random.choice(list2),random.choice(list3),random.choice(list4),random.choice(list5)]
 
+print(pass_regex())
 
