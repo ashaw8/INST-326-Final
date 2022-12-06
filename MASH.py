@@ -53,7 +53,7 @@ def main():
           and you get around by {regex[2]}\n
           your pet is a {regex[3]}\n
           and you live in {regex[4]}''')
-    
+       
 def salaries():
     
     
@@ -61,7 +61,7 @@ def salaries():
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
     df
     
-    salary_filter= df['Salary'] >= 60_000
-    
-    
+    salary_filter= df['Salary'] >= 60_000    
+ 
+   
 main()
