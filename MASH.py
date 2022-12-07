@@ -9,7 +9,9 @@ class Storyline:
     def __init__(self,storyline):
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4], storyline[5]
          
-        
+    def __repr__(self):
+        return repr('Your partner is' +self.name,'You will have ' +self.kids ', You will get around by '+ self.car + 'your pet will be a '+ self.pet + 'and you will live in ' + self.location)
+    
         
 
 def categories(textline, option):
@@ -36,8 +38,8 @@ def open_file(textfile):
             random_list.append(line)
     return random_list
 
-def pass_regex():
-    stored = open_file("MASH.txt")
+def pass_regex(textfile):
+    stored = open_file(textfile)
     list1 = []  #last name first name
     list2 = []  # # of kids 
     list3 = []  # Type of car
@@ -78,8 +80,8 @@ def createplot(job, desired_salary = 100000):
     plt.show()
 
 
-def main():
-    regex = pass_regex()
+def main(textfile):
+    regex = pass_regex(textfile)
      
     life = Storyline(regex)
     salary = salaries()
