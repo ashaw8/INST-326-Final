@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 
 class Storyline:
     def __init__(self,storyline):
-        self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4], storyline[5]
+        self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
          
     def __repr__(self):
-        return repr('Your partner is' +self.name,'You will have ' +self.kids ', You will get around by '+ self.car + 'your pet will be a '+ self.pet + 'and you will live in ' + self.location)
+        return 'Your partner is' +self.name+'You will have ' +self.kids+ ', You will get around by '+ self.car + 'your pet will be a '+ self.pet + 'and you will live in ' + self.location
     
         
 
@@ -86,6 +86,6 @@ def main(textfile):
     life = Storyline(regex)
     salary = salaries()
     createplot(salary)
-    
-main()
+    print(repr(life))
+main("MASH.txt")
  
