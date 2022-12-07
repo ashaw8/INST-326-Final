@@ -46,16 +46,6 @@ def pass_regex():
         
     return [random.choice(list1),random.choice(list2),random.choice(list3),random.choice(list4),random.choice(list5)]
 
-
-def main():
-    regex = pass_regex()
-    print(f'''Your partner is {regex[0]}\n
-          and you will have {regex[1]} kids\n
-          and you get around by {regex[2]}\n
-          your pet is a {regex[3]}\n
-          and you live in {regex[4]}''')
-    salary = salaries()
-    createplot(salary)
        
 def salaries():
     
@@ -83,5 +73,16 @@ def createplot(job, desired_salary = 100000):
 createplot("Doctor")
 
 
+def main():
+    regex = pass_regex()
+    print(f'''Your partner is {regex[0]}\n
+          and you will have {regex[1]} kids\n
+          and you get around by {regex[2]}\n
+          your pet is a {regex[3]}\n
+          and you live in {regex[4]}''')
+    salary = salaries()
+    createplot(salary)
+    
+    
 main()
  
