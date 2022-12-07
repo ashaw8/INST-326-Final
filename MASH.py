@@ -73,7 +73,6 @@ def createplot(job, desired_salary = 100000):
     ds = plt.plot(desired_salary)
     jobsal = plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
     plt.show()
-createplot("Doctor")
 
 
 def main():
