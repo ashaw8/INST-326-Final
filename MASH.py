@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 
 class Storyline:
     def __init__(self,storyline):
-        self.storyline = storyline
+        self.name, self.kids, self.car, self.pet, self.location = storyline [0], self.name, self.kids, self.car, self.pet, self.location = storyline [1],self.name, self.kids, self.car, self.pet, self.location = storyline [2].self.name, self.kids, self.car, self.pet, self.location = storyline [3],self.name, self.kids, self.car, self.pet, self.location = storyline [4], self.name, self.kids, self.car, self.pet, self.location = storyline [5]
+        
+        
 
 def categories(textline, option):
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
@@ -77,15 +79,10 @@ def createplot(job, desired_salary = 100000):
 
 def main():
     regex = pass_regex()
-    print(f'''Your partner is {regex[0]}\n
-          and you will have {regex[1]} kids\n
-          and you get around by {regex[2]}\n
-          your pet is a {regex[3]}\n
-          and you live in {regex[4]}''')
+     
+    life = Storyline(regex)
     salary = salaries()
     createplot(salary)
-    
-    life = Storyline(regex)
     
 main()
  
