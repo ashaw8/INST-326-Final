@@ -5,9 +5,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-class storyline:
+class Storyline:
     def __init__(self,storyline):
-        self.storyline = randomlife 
+        self.storyline = storyline
 
 def categories(textline, option):
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
@@ -86,6 +86,7 @@ def main():
     salary = salaries()
     createplot(salary)
     
+    life = Storyline(regex)
     
 main()
  
