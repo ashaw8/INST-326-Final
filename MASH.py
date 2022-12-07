@@ -3,6 +3,7 @@ import random
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+from argparse import ArgumentParser
 
 
 class Storyline:
@@ -87,5 +88,26 @@ def main(textfile):
     salary = salaries()
     createplot(salary)
     print(repr(life))
-main("MASH.txt")
- 
+
+
+def parse_args(arglist):
+    """ Process command line arguments.
+    
+    Expect one mandatory argument (a file containing postfix expressions).
+    
+    Args:
+        arglist (list of str): arguments from the command line.
+    
+    Returns:
+        namespace: the parsed arguments, as a namespace.
+    """
+    parser = ArgumentParser()
+    parser.add_argument("storyline", help="A list containing aspects of the person's life.")
+    args = parser.parse_args(arglist)
+    return args
+
+
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.file)
+
