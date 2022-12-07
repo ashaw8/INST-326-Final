@@ -86,8 +86,8 @@ def main(textfile):
      
     life = Storyline(regex)
     salary = salaries()
-    createplot(salary)
     print(repr(life))
+    createplot(salary)
 
 
 def parse_args(arglist):
