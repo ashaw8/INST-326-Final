@@ -77,9 +77,10 @@ def createplot(job, desired_salary = 100000):
     for list in money_made:
         jobs_list.append(list[0])
         salary_list.append(list[1])
-    plt.plot(job, desired_salary)
-    plt.bar(jobs_list, salary_list, color = "maroon", width = 1)
+    ds = plt.plot(desired_salary)
+    jobsal = plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
     plt.show()
+createplot("Doctor")
 
 
 main()
