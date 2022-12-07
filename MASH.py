@@ -102,9 +102,8 @@ def parse_args(arglist):
         namespace: the parsed arguments, as a namespace.
     """
     parser = ArgumentParser()
-    parser.add_argument("storyline", help="A list containing aspects of the person's life.")
-    args = parser.parse_args(arglist)
-    return args
+    parser.add_argument("file", help="A list containing aspects of the person's life.")
+    return parser.parse_args(arglist)
 
 
 if __name__ == "__main__":
