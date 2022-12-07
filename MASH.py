@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 
 class Storyline:
     def __init__(self,storyline):
-        self.name, self.kids, self.car, self.pet, self.location = storyline [0], self.name, self.kids, self.car, self.pet, self.location = storyline [1],self.name, self.kids, self.car, self.pet, self.location = storyline [2].self.name, self.kids, self.car, self.pet, self.location = storyline [3],self.name, self.kids, self.car, self.pet, self.location = storyline [4], self.name, self.kids, self.car, self.pet, self.location = storyline [5]
+        self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4], storyline[5]
+         
         
         
 
