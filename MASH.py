@@ -10,7 +10,7 @@ class Storyline:
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
          
     def __repr__(self):
-        return 'Your partner is ' +self.name+' You will have ' +self.kids+ ' kid(s).' ', You will get around by '+ self.car+'. Your pet will be a '+ self.pet + ' and you will live in ' + self.location
+        return 'Your partner is ' +self.name+' You will have ' +self.kids+ ' kid(s).' ' You will get around by '+ self.car+'. Your pet will be a '+ self.pet + ' and you will live in ' + self.location
     
         
 
