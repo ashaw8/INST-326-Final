@@ -32,11 +32,11 @@ def open_file(textfile):
 
 def pass_regex():
     stored = open_file("MASH.txt")
-    list1 = []
-    list2 = []
-    list3 = []
-    list4 = []
-    list5 = []
+    list1 = []  #last name first name
+    list2 = []  # # of kids 
+    list3 = []  # Type of car
+    list4 = []  # pet
+    list5 = []  # location of life 
     for line in stored:
         list1.append(categories(line, 1))
         list2.append(categories(line, 2))
