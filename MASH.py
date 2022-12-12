@@ -110,6 +110,8 @@ def main(textfile):
     salary = salaries()
     print(repr(life))
     createplot(salary)
+    user_job(textfile)
+    
 
 
 def parse_args(arglist):
