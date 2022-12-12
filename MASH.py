@@ -123,6 +123,8 @@ def salaries():
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
     career = random.choice(money_made)
     job,salary = career[0],career[1]
+    print(f'Your profession is {job} and you make ${salary} annually\nYou can compare your salary to other professions in the graph.')
+    print("Remaining users in the data frame earn a HIGHER salary than you:")
     salary_filter= df['Salary'] >= salary
     print(df[salary_filter])
     #print(f'You are a {job} and you make {salary} you make less then those above')
@@ -154,7 +156,7 @@ def user_entry(textfile):
     
     
 
-def createplot(desired_salary = 100000):
+def createplot(test, desired_salary = 100000):
     """Plots all the different potential salaries to their respective professions. Displays a bar
     graph. 
 
@@ -171,8 +173,8 @@ def createplot(desired_salary = 100000):
     for list in money_made:
         jobs_list.append(list[0])
         salary_list.append(list[1])
-    ds = plt.plot(desired_salary)
-    jobsal = plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
+    plt.plot(desired_salary)
+    plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
     plt.show()
     return money_made
 
@@ -189,10 +191,9 @@ def main(textfile):
     if user_options == str(1):
         regex = pass_regex(textfile)
         life = Storyline(regex)
+        print(repr(life))
         salary = salaries()
         compare_jobs(salary[0])
-        print(repr(life))
-        print(f'Your profession is {salary[0]} and you make ${salary[1]} annually\nYou can compare your salary to other professions in the graph.')
         createplot(salary)
     else:
         user_entry(textfile)
@@ -213,7 +214,7 @@ def compare_jobs(user_job):
             jobs_ordered.append(job)
         else:
             jobs_ordered.append(job)
-    
+    print("You're job is in all caps. These are the jobs in order from most made, to least made:")
     print(' '.join(jobs_ordered))
     
     
