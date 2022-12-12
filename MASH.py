@@ -81,6 +81,16 @@ def salaries():
     #print(f'You are a {job} and you make {salary} you make less then those above')
     return job
 
+def user_job(textfile):
+    yes_or_no = print(input("Would you like to add a job? Enter 'Y' or 'N'"))
+    if yes_or_no == "Y":
+        f = open(textfile, "a")
+        added_job = print(input("Input your desired job"))
+        f.write(added_job)
+        f.close()
+    elif yes_or_no == "N":
+        pass
+
 def createplot(job, desired_salary = 100000):
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     jobs_list = []
