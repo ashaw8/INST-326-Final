@@ -6,7 +6,14 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser
 
 
-class Storyline:
+class Storyline: 
+    """
+    Args: 
+    Takes part of the storyline including all attributes 
+    Returns:
+    Who the set users partner will be , kids they will have, transportation we will have, location of where they will live. 
+    
+    """
     def __init__(self,storyline):
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
          
