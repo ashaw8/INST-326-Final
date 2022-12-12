@@ -108,13 +108,17 @@ def createplot(job, desired_salary = 100000):
 
 
 def main(textfile):
-    regex = pass_regex(textfile)
-     
-    life = Storyline(regex)
-    salary = salaries()
-    print(repr(life))
-    createplot(salary)
-    user_entry(textfile)
+    print(f"Enter the corresponding digit to navigate: \n1 - Play MASH\n2 - Add entry to MASH game")
+    user_options = input()
+    if user_options == str(1):
+        regex = pass_regex(textfile)
+        life = Storyline(regex)
+        salary = salaries()
+        print(repr(life))
+        print(f'Your profession is {salary[0]} and you make ${salary[1]} annually\nYou can compare your salary to other professions in the graph.')
+        createplot(salary)
+    else:
+        user_entry(textfile)
     
 
 
