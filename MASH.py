@@ -81,13 +81,17 @@ def salaries():
     #print(f'You are a {job} and you make {salary} you make less then those above')
     return job
 
-def user_job(textfile):
-    yes_or_no = print(input("Would you like to add a job? Enter 'Y' or 'N'"))
+def user_entry(textfile):
+    print("Would you like to add a new entry? Enter 'Y' or 'N'")
+    yes_or_no = input()
+    print(yes_or_no)
     if yes_or_no == "Y":
-        f = open(textfile, "a")
-        added_job = print(input("Input your desired job"))
-        f.write(added_job)
-        f.close()
+        with open(textfile, "a") as f:
+            print("Input your desired entry following the format exactly: ")
+            print("Lastname, Firstname Kids(numerical) Car Pet Location")
+            added_entry= input()
+            f.write("\n" + added_entry)
+            f.close()
     elif yes_or_no == "N":
         pass
 
@@ -110,7 +114,7 @@ def main(textfile):
     salary = salaries()
     print(repr(life))
     createplot(salary)
-    user_job(textfile)
+    user_entry(textfile)
     
 
 
