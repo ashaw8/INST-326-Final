@@ -12,10 +12,11 @@ class Storyline:
         
         Attributes:
         
-        kids (int)
-        car (str)
-        pet (str)
-        location (str)
+        name (str) celeb from txt file 
+        kids (int) number of kids that they will have with celeb
+        car (str) transportation use
+        pet (str) animal that the user will own
+        location (str) location of where user will live
         
     """
     def __init__(self,storyline):
