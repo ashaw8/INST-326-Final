@@ -16,6 +16,7 @@ class Storyline:
         car (str)
         pet (str)
         location (str)
+        
     """
     def __init__(self,storyline):
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
