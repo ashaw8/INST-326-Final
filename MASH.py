@@ -79,7 +79,7 @@ def salaries():
     df[salary_filter]
     #print(df[salary_filter])
     #print(f'You are a {job} and you make {salary} you make less then those above')
-    return job
+    return [job, salary]
 
 def user_entry(textfile):
     print("Would you like to add a new entry? Enter 'Y' or 'N'")
