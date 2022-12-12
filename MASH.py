@@ -20,6 +20,12 @@ class Storyline:
         
     """
     def __init__(self,storyline):
+        """Sequence unpacks the random list of elements that makes up the users MASH game experience.
+        Each attribute is then assigned part of the sequence unpack to be used in the repr method
+
+        Args:
+            storyline (list): List of random elements that was created in the pass_regex function
+        """
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
          
     def __repr__(self):
@@ -28,6 +34,17 @@ class Storyline:
         
 
 def categories(textline, option):
+    """This function recieves a textfile and matches the lines in the file to
+    groups using a regular expression. It then returns that group depending on the
+    option that is being called from the parameter and pass_regex function
+    Args:
+        textline (str): _A line from the textfile, supposed to be a first name last name
+        # of kids, pet, and locaiton
+        option (int): An optional int that represents the group number
+        we want to call
+    Returns:
+        str: A string from the group that was called based on the option parameter
+    """
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
     search_regex = re.search(expression,textline)
     if option == 1:
@@ -44,6 +61,15 @@ def categories(textline, option):
     
 
 def open_file(textfile):  
+    """Open our textfile, stip it of special characters and then append it to a list.
+    Return that list to be used throughout the rest of the program
+
+    Args:
+        textfile (str): Str name to a text file specified by user
+
+    Returns:
+        _type_: A list containing each line from textfile as an entire element
+    """
     random_list = []  
     with open(textfile,"r", encoding="utf-8") as f:
         for line in f:
@@ -52,6 +78,19 @@ def open_file(textfile):
     return random_list
 
 def pass_regex(textfile):
+    """Iterates through a textfile and assigns each part of the line to a group. The groups
+    are determined by a regex expression in another function. The function then returns one random
+    element from each group in order to give the user a randomized version of MASH
+    Args:
+        textfile (str): A str to the textfile that we want to open
+
+    Returns:
+        list: A randomized list where each element is from one of the other five different groups
+        that contains different categories.
+
+    Side effects:
+        Creates a list by using the open file and categories functions. 
+    """
     stored = open_file(textfile)
     list1 = []  #last name first name
     list2 = []  # # of kids 
@@ -68,20 +107,38 @@ def pass_regex(textfile):
     return [random.choice(list1),random.choice(list2),random.choice(list3),random.choice(list4),random.choice(list5)]
 
        
-def salaries():
+def salaries(): 
+    """Create our lists of lists that will be used to give our user their job and the assoicated
+    salary with that job. The function creates a pandas data frame to show what professions
+    make more each year then the one you were assigned. 
+
+    Returns:
+        list: The random job and salary assigned to the user
     
-    
+    Side effects:
+        Job and salary which get returned will be used by other functions to compare other aspects
+        of the users assigned salary to other profession's salaries.
+    """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
     career = random.choice(money_made)
     job,salary = career[0],career[1]
     salary_filter= df['Salary'] >= salary
-    df[salary_filter]
-    #print(df[salary_filter])
+    print(df[salary_filter])
     #print(f'You are a {job} and you make {salary} you make less then those above')
     return [job, salary]
 
 def user_entry(textfile):
+    """Allows the user to add entries to the text file, the entries must be in a specific format:
+    Last name, First name Number of kids Type of transportation Pet Location
+
+    Args:
+        textfile (_str): A str to the path of the textfile which contains all the entries to 
+        be used in a game of MASH
+    
+    Side effects: 
+        Appends new data entries to the existing text files
+    """
     print("Would you like to add a new entry? Enter 'Y' or 'N'")
     yes_or_no = input()
     print(yes_or_no)
@@ -97,7 +154,17 @@ def user_entry(textfile):
     
     
 
-def createplot(job, desired_salary = 100000):
+def createplot(desired_salary = 100000):
+    """Plots all the different potential salaries to their respective professions. Displays a bar
+    graph. 
+
+    Args:
+        desired_salary (int, optional): The desired salary by the user
+        if they are not happy with the current salary they're receiving. Defaults to 100000.
+
+    Returns:
+       list: Lists of lists, containing the profession and their salary per each list
+    """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     jobs_list = []
     salary_list = []
@@ -107,31 +174,47 @@ def createplot(job, desired_salary = 100000):
     ds = plt.plot(desired_salary)
     jobsal = plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
     plt.show()
+    return money_made
 
     
 def main(textfile):
-    compare_jobs()
+    """Main driver of our MASH script. Runs a user display option for users to pick if the want to 
+    add to the existing textfile or if they want to play a game of MASH
+
+    Args:
+        textfile (str): String containing the path to the textfile, entered in command line terminal
+    """
     print(f"Enter the corresponding digit to navigate: \n1 - Play MASH\n2 - Add entry to MASH game")
     user_options = input()
     if user_options == str(1):
         regex = pass_regex(textfile)
         life = Storyline(regex)
         salary = salaries()
+        compare_jobs(salary[0])
         print(repr(life))
         print(f'Your profession is {salary[0]} and you make ${salary[1]} annually\nYou can compare your salary to other professions in the graph.')
         createplot(salary)
     else:
         user_entry(textfile)
         
-def compare_jobs():
+def compare_jobs(user_job):
+    """Iterates between all jobs alongside the salaries in the dataframe.
+     This function then creates a list comparing all salaires of the different jobs to each other.
+    
+
+    Args:
+        user_job (str): A string that names the profession the user has been assigned.
+    """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
-    jobs_list = []
-    salary_list = []
-    for list in money_made:
-        jobs_list.append(list[0])
-        salary_list.append(list[1])
+    jobs_ordered = []
     for job, salary in sorted(money_made, key = lambda g:g[1]):
-        print(job, salary)
+        if user_job == job:
+            job = job.upper()
+            jobs_ordered.append(job)
+        else:
+            jobs_ordered.append(job)
+    
+    print(' '.join(jobs_ordered))
     
     
 
