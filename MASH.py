@@ -5,6 +5,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from argparse import ArgumentParser
 
+# Topics covered: Magic methods outside innnit, regex, with on files, sequence unpacking,
+#filtering a data frame, optional parameters, pyplot, conditionals, lamba functions, parse_args
+
 
 class Storyline: 
     """
@@ -29,6 +32,13 @@ class Storyline:
         self.name, self.kids, self.car, self.pet, self.location = storyline[0], storyline[1], storyline[2], storyline[3], storyline[4]
          
     def __repr__(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+
+        Member: Peter Mensah, magic methods not innit 
+        """
         return 'Your partner is ' +self.name+' You will have ' +self.kids+ ' kid(s).' ' You will get around by '+ self.car+'. Your pet will be a '+ self.pet + ' and you will live in ' + self.location
     
         
@@ -44,6 +54,8 @@ def categories(textline, option):
         we want to call
     Returns:
         str: A string from the group that was called based on the option parameter
+
+    Member: Aidan Shawyer, used regular expressions. 
     """
     expression = r'''(?P<name>^[A-Z]{1}\w+,\s[A-Z]{1}\w+)\s(?P<kids>\d+)\s(?P<transportation>[A-Z]{1}[a-z]+)\s(?P<pet>[a-z]+)\s(?P<place>[A-Z][a-z]+)'''
     search_regex = re.search(expression,textline)
@@ -69,6 +81,8 @@ def open_file(textfile):
 
     Returns:
         _type_: A list containing each line from textfile as an entire element
+
+    Member: Aidan Shawyer, Open files
     """
     random_list = []  
     with open(textfile,"r", encoding="utf-8") as f:
@@ -90,6 +104,9 @@ def pass_regex(textfile):
 
     Side effects:
         Creates a list by using the open file and categories functions. 
+    
+    Member: Josiah Arnold
+
     """
     stored = open_file(textfile)
     list1 = []  #last name first name
@@ -118,6 +135,8 @@ def salaries():
     Side effects:
         Job and salary which get returned will be used by other functions to compare other aspects
         of the users assigned salary to other profession's salaries.
+    
+    Member: Jeffrey Gomes, sequence unpacking and filtering a data frame
     """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     df= pd.DataFrame(money_made, columns= ['Job', 'Salary'])
@@ -140,6 +159,8 @@ def user_entry(textfile):
     
     Side effects: 
         Appends new data entries to the existing text files
+    
+    Member: Hannah Johnston (With open again, but not to be used as our main function to cover the topic)
     """
     print("Would you like to add a new entry? Enter 'Y' or 'N'")
     yes_or_no = input()
@@ -166,6 +187,8 @@ def createplot(test, desired_salary = 100000):
 
     Returns:
        list: Lists of lists, containing the profession and their salary per each list
+    
+    Member: Hannah Johnston, optional parameters and pyplot
     """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     jobs_list = []
@@ -185,6 +208,8 @@ def main(textfile):
 
     Args:
         textfile (str): String containing the path to the textfile, entered in command line terminal
+
+    Member: Peter Mensah, Condintionals 
     """
     print(f"Enter the corresponding digit to navigate: \n1 - Play MASH\n2 - Add entry to MASH game")
     user_options = input()
@@ -205,6 +230,8 @@ def compare_jobs(user_job):
 
     Args:
         user_job (str): A string that names the profession the user has been assigned.
+    
+    Members: Jeffrey Gomes, lambda expressions
     """
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
     jobs_ordered = []
@@ -229,6 +256,8 @@ def parse_args(arglist):
     
     Returns:
         namespace: the parsed arguments, as a namespace.
+    
+    Member: Josiah Arnold, parse args
     """
     parser = ArgumentParser()
     parser.add_argument("file", help="A list containing aspects of the person's life.")
