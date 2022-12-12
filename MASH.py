@@ -110,6 +110,7 @@ def createplot(job, desired_salary = 100000):
 
     
 def main(textfile):
+    compare_jobs()
     print(f"Enter the corresponding digit to navigate: \n1 - Play MASH\n2 - Add entry to MASH game")
     user_options = input()
     if user_options == str(1):
@@ -129,8 +130,8 @@ def compare_jobs():
     for list in money_made:
         jobs_list.append(list[0])
         salary_list.append(list[1])
-    order = sorted(salary_list, key = money_made.get)
-    print(order)
+    for job, salary in sorted(money_made, key = lambda g:g[1]):
+        print(job, salary)
     
     
 
