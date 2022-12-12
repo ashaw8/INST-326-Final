@@ -94,6 +94,8 @@ def user_entry(textfile):
             f.close()
     elif yes_or_no == "N":
         pass
+    
+    
 
 def createplot(job, desired_salary = 100000):
     money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
@@ -106,7 +108,7 @@ def createplot(job, desired_salary = 100000):
     jobsal = plt.bar(jobs_list, salary_list, color = "maroon", width = .75)
     plt.show()
 
-
+    
 def main(textfile):
     print(f"Enter the corresponding digit to navigate: \n1 - Play MASH\n2 - Add entry to MASH game")
     user_options = input()
@@ -119,8 +121,18 @@ def main(textfile):
         createplot(salary)
     else:
         user_entry(textfile)
+        
+def compare_jobs():
+    money_made = [["Doctor", 150_000], ["Chef", 90_000], ["Librarian", 30_000], ["Swimmer", 60_000],["Nurse",10_000],["cop",50_000], ["Vet", 120_000],["Dropshipper",180_000], ["Model", 7_000],["counselor", 1_000],["Dentist",190_000], ["Rapper", 50_000], ["Actor", 200_000], ["Lawyer", 250_000], ["Lifeguard", 30_000]]
+    jobs_list = []
+    salary_list = []
+    for list in money_made:
+        jobs_list.append(list[0])
+        salary_list.append(list[1])
+    order = sorted(salary_list, key = money_made.get)
+    print(order)
     
-
+    
 
 def parse_args(arglist):
     """ Process command line arguments.
