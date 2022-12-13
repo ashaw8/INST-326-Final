@@ -6,6 +6,7 @@ Who did/used what?:
 * Jeff: Salaries, Compare Jobs (pandas data frame sorting , sequence unpacking) 
 * Josiah: Categories, Parse Args (parse args, conditionals)
 * Peter: Class & Main - (repr method and f-string)
+* Additionally used: Lambdas
 
 	Description: 
 Our project was a version of the childhood game MASH where a user can input potential options for future life 
