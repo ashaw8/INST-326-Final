@@ -1,11 +1,11 @@
 # INST-326-Final
 Who did/used what?:
 
-Aidan: Open W/ Pass RegEx - (with open, regex function)
-Hannah: User Entry, CreatePlot: (pyplot, optional parameters) 
-Jeff: Salaries, Compare Jobs (pandas data frame sorting , sequence unpacking) 
-Josiah: Categories, Parse Args (parse args, conditionals)
-Peter: Class & Main - (repr method and f-string)
+* Aidan: Open W/ Pass RegEx - (with open, regex function)
+* Hannah: User Entry, CreatePlot: (pyplot, optional parameters) 
+* Jeff: Salaries, Compare Jobs (pandas data frame sorting , sequence unpacking) 
+* Josiah: Categories, Parse Args (parse args, conditionals)
+* Peter: Class & Main - (repr method and f-string)
 
 	Description: 
 Our project was a version of the childhood game MASH where a user can input potential options for future life 
