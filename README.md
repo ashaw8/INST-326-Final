@@ -15,15 +15,15 @@ to the text file which will add more possibilities to the game.
 
 ORDER OF COMMANDS:
 
-Enter in terminal “python3 MASH.py  MASH.txt”
-ENTER either “1” or “2” to either play MASH or to add an entry
-If the entry is “2” enter either “Y” or “N”.
-If the entry is “Y” enter text in the format required by the prompt.
-If the entry is “N” the game ends.
+* Enter in terminal “python3 MASH.py  MASH.txt”
+* ENTER either “1” or “2” to either play MASH or to add an entry
+* If the entry is “2” enter either “Y” or “N”.
+* If the entry is “Y” enter text in the format required by the prompt.
+* If the entry is “N” the game ends.
 
-If you want to play again, you must run the code.
+* If you want to play again, you must run the code.
 
-Soures Used To Understand MASH: 
+## Soures Used To Understand MASH: 
 
 Hannah Johnston expert player, never lost.
 
